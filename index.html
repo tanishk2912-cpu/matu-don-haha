@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanishk | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <!-- Navbar -->
+  <nav>
+    <h1>Portfolio</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+<section id="home" class="home">
+    <div class="avatar fade up">
+      <img src="images/avatar.png" alt="Tanishk Avatar">
+    </div>
+   <div class="home-text">
+      <h1>Hey, I’m Tanishk 👋</h1>
+      <p>
+        A Computer Science Engineer, turning ideas into clean,
+        engaging digital experiences.
+      </p>
+    </div>
+</section>
+</main>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+  I’m Tanishk, a Computer Science Engineer with a strong passion
+  for building clean, modern, and meaningful digital experiences. I enjoy turning
+  ideas into visually appealing and highly functional products that make a real
+  impact.
+ </p>
+
+<p>
+  My work focuses on designing and developing modern portfolios, responsive websites,
+  and digital solutions that help individuals and brands establish a strong online
+  presence. I believe good design is not just about aesthetics — it’s about usability,
+  performance, and delivering the right message to the right audience.
+</p>
+
+<p>
+  With a mindset that blends creativity and technology, I continuously explore new
+  tools, design trends, and development practices to improve my craft. I’m always
+  curious, always learning, and always building — driven by the goal of creating
+  digital experiences that are simple, effective, and impactful.
+</p>
+<section id="about" class="about fade-up">
+
+
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skill-grid">
+      <div class="skill fade up">HTML & CSS</div>
+      <div class="skill fade up">JavaScript</div>
+      <div class="skill fade up">Responsive Design</div>
+      <div class="skill fade up">UI/UX Design</div>
+      <div class="skill fade up">Social Media Strategy</div>
+    </div>
+  </section>
+ 
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s work together and create something meaningful.</p>
+    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-btn" target="_blank">
+  Get in Touch
+</a>
+
+
+  </section>
+<section id="contact" class="contact fade-up">
+<script>
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  document.querySelectorAll(".fade-up, .fade-left, .fade-right")
+    .forEach(el => observer.observe(el));
+</script>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<script>
+  const dot = document.querySelector(".cursor-dot");
+  const ring = document.querySelector(".cursor-ring");
+
+  document.addEventListener("mousemove", (e) => {
+    dot.style.left = `${e.clientX}px`;
+    dot.style.top = `${e.clientY}px`;
+
+    ring.style.left = `${e.clientX}px`;
+    ring.style.top = `${e.clientY}px`;
+  });
+
+  document.querySelectorAll("a, button, .skill").forEach(el => {
+    el.addEventListener("mouseenter", () => {
+      ring.style.transform = "translate(-50%, -50%) scale(1.6)";
+    });
+
+    el.addEventListener("mouseleave", () => {
+      ring.style.transform = "translate(-50%, -50%) scale(1)";
+    });
+  });
+</script>
+
+</body>
+</html>
