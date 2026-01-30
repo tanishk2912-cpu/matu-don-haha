@@ -1,0 +1,281 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #FFFFF0; /* Ivory */
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #FFFFF0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+nav h1 {
+  color: #8C3B1F; /* Rust */
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: #8C3B1F;
+}
+
+/* ===== HOME / HERO ===== */
+.home {
+  padding-top: 110px; /* space for fixed navbar */
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+/* Avatar */
+.avatar {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #8C3B1F;
+  padding: 6px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Home text */
+.home-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.home-text p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+/* ===== SECTION COMMON ===== */
+section {
+  padding: 60px 20px;
+}
+
+section h2 {
+  text-align: center;
+  color: #8C3B1F;
+  margin-bottom: 20px;
+}
+
+/* ===== ABOUT ===== */
+.about p {
+  max-width: 800px;
+  margin: 0 auto 15px;
+  text-align: center;
+}
+
+/* ===== SKILLS ===== */
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.skill {
+  background: #8C3B1F;
+  color: #FFFFF0;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  margin-bottom: 15px;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: #8C3B1F;
+  color: #FFFFF0;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+.whatsapp-btn:hover {
+  opacity: 0.9;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 12px;
+    font-size: 0.9rem;
+  }
+
+  .home-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  section {
+    padding: 40px 16px;
+  }
+}
+/* ===== SCROLL ANIMATION BASE ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s ease;
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s ease;
+}
+
+/* When visible */
+.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.skill:nth-child(1) { transition-delay: 0.1s; }
+.skill:nth-child(2) { transition-delay: 0.2s; }
+.skill:nth-child(3) { transition-delay: 0.3s; }
+.skill:nth-child(4) { transition-delay: 0.4s; }
+.skill:nth-child(5) { transition-delay: 0.5s; }
+nav ul li a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #8C3B1F; /* rust */
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+.skill {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(140, 59, 31, 0.3);
+}
+.whatsapp-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(140, 59, 31, 0.35);
+}
+.avatar {
+  transition: transform 0.4s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+/* ===== CUSTOM CURSOR ===== */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #8C3B1F;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #8C3B1F;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+}
+
+/* Hide cursor on mobile */
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
